@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1757417700529,
+    "eventId": 1,
+    "studentName": "Matharu",
+    "email": "a@gmail.com",
+    "phone": "1234567890",
+    "appliedAt": "2025-09-09"
+  },
+  {
+    "id": 1757418661427,
+    "eventId": 1,
+    "studentName": "abc",
+    "email": "b@gmail.com",
+    "phone": "1234567890",
+    "appliedAt": "2025-09-09"
+  }
+]
