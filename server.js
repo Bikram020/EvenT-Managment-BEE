@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -6,12 +7,16 @@ const User = require('./models/user');
 const app = express();
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://bikramaditya4710_db_user:E64OxVnaQjdNfW1w@cluster0.jadnh5w.mongodb.net/?appName=Cluster0')
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=> console.log('✅ MongoDB Connected'))
 .catch((err) => console.log('❌ MongoDB Connection Error:',err))
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 
 // Request logging middleware
